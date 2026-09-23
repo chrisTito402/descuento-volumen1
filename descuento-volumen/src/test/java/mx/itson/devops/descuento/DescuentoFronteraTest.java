@@ -33,4 +33,10 @@ class DescuentoFronteraTest {
         int obtenido = descuento.porcentaje(101);
         assertEquals(10, obtenido);
     }
+
+    @Test
+    void calculaTotalConDescuentoEnCentavos() {
+        long obtenido = descuento.totalCentavos(1000, 100);
+        assertEquals(90000, obtenido);
+    }
 }
