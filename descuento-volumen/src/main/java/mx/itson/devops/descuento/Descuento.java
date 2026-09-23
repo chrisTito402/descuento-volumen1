@@ -4,9 +4,9 @@ package mx.itson.devops.descuento;
  * Descuento por volumen.
  *
  * REGLA DE NEGOCIO acordada con el area comercial:
- *   - menos de 100 unidades  -> 0 %
- *   - DESDE 100 unidades     -> 10 %
- *   - unidades negativas     -> IllegalArgumentException
+ * - menos de 100 unidades -> 0 %
+ * - DESDE 100 unidades -> 10 %
+ * - unidades negativas -> IllegalArgumentException
  */
 public class Descuento {
 

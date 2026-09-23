@@ -12,9 +12,13 @@ jobs:
     name: Build y pruebas (Maven)
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: descuento-volumen
+
     steps:
       - name: Descargar el codigo del repositorio
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Preparar Java 21 (Temurin) y cache de Maven
         uses: actions/setup-java@v4
@@ -22,6 +26,7 @@ jobs:
           distribution: temurin
           java-version: '21'
           cache: maven
+          cache-dependency-path: descuento-volumen/pom.xml
 
       - name: Build y pruebas
         run: mvn -B verify
@@ -31,5 +36,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: surefire-reports
-          path: target/surefire-reports/
+          path: descuento-volumen/target/surefire-reports/
           if-no-files-found: warn
